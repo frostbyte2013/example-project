@@ -20,6 +20,8 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    env:
+      ACTIONS_STEP_DEBUG: true  # Set debug mode for actions steps
     strategy:
       matrix:
         node-version: [18.x]
@@ -29,12 +31,11 @@ jobs:
       with:
         sparse-checkout: |
           student-fe
-    - name: Use Node.js ${{ matrix.node-version }}
+    - name: Test Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v4
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-        cache-dependency-path: './students-fe'
     - run: cd ./student-fe
     - run: npm ci
     - run: npm run build --if-present
