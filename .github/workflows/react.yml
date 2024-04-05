@@ -7,7 +7,7 @@ on:
       - 'terraform/*'
       - 'helm/*'
       - 'k8s/*'
-      - 'student-fe/*'
+      - 'django_react_proj/*'
       - '.github/workflows/django.yml*'
   pull_request:
     branches: [ "main" ]
@@ -15,7 +15,7 @@ on:
       - 'terraform/*'
       - 'helm/*'
       - 'k8s/*'
-      - 'student-fe/*'
+      - 'django_react_proj/*'
       - '.github/workflows/django.yml*'
 jobs:
   test:
@@ -25,12 +25,16 @@ jobs:
         node-version: [18.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
+      with:
+        sparse-checkout: |
+          student-fe
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+    - run: cd ./student-fe
     - run: npm ci
     - run: npm run build --if-present
     - run: npm test
@@ -39,7 +43,9 @@ jobs:
     runs-on: ubuntu-latest   
     steps:
     - uses: actions/checkout@v4
-
+      with:
+        sparse-checkout: |
+          student-fe
     # - name: Set up QEMU # Add support for more platforms with QEMU (optional)
     #   uses: docker/setup-qemu-action@v3  # https://github.com/docker/setup-qemu-action
     - name: Set up Docker Buildx
