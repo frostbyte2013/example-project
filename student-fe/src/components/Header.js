@@ -6,6 +6,7 @@ class Header extends Component {
       <div className="text-center">
         <img
           // src="/public/yewt.png"
+          alt="Header Image"
           src="https://gdm-catalog-fmapi-prod.imgix.net/ProductLogo/b0025d6f-fcf1-49fb-b6c4-91f2aa4be5fc.png?w=100&q=50" 
           width="300"
           className="img-thumbnail"
