@@ -41,6 +41,7 @@ jobs:
         python3 manage.py test  # Adjust test command if needed
 
   build:
+    needs: test
     runs-on: ubuntu-latest   
     steps:
     - uses: actions/checkout@v4
