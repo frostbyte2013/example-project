@@ -1,0 +1,23 @@
+traefik:
+  autoscaling:
+    enabled: true
+    maxReplicas: 3
+  globalArguments:
+  - "--global.checknewversion"
+  - "--global.sendanonymoususage"
+
+  #
+  # Configure Traefik static configuration
+  # -- Additional arguments to be passed at Traefik's binary
+  # All available options available on https://docs.traefik.io/reference/static-configuration/cli/
+  ## Use curly braces to pass values: `helm install --set="additionalArguments={--providers.kubernetesingress.ingressclass=traefik-internal,--log.level=DEBUG}"`
+  additionalArguments: 
+  #  - "--providers.kubernetesingress.ingressclass=traefik-internal"
+  #  - "--log.level=DEBUG"
+  # -- Environment variables to be passed to Traefik's binary
+  ports:
+    traefik:
+      expose: true
+      exposedPort: 9000
+      port: 9000
+      protocol: TCP
