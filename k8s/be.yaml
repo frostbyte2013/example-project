@@ -26,7 +26,7 @@ spec:
     spec:
       containers:
       - name: django-api
-        image: django-be:1.0.1
+        image: nickandrew01/projects:django-be-0.1.0
         ports:
         - containerPort: 8000
           name: web
