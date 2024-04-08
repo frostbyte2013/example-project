@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Form, FormGroup, Input, Label } from "react-bootstrap";
+import { Button, Form, FormGroup, Input, Label } from "reactstrap";
 
 import axios from "axios";
 
@@ -96,7 +96,7 @@ export default NewStudentForm;
 // FormComponent.jsx
 
 // import React, { useState } from 'react';
-// import { Button, Form, FormGroup, Input, Label } from "react-bootstrap";
+// import { Button, Form, FormGroup, Input, Label } from "reactstrap";
 
 // import axios from "axios";
 

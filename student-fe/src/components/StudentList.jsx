@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Table } from "react-bootstrap";
+import { Table } from "reactstrap";
 import NewStudentModal from "./NewStudentModal";
 
 import ConfirmRemovalModal from "./ConfirmRemovalModal";
