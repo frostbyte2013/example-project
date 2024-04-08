@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from "react";
-import { Button, Modal, ModalHeader, ModalBody } from "reactstrap";
+import { Button, Modal, ModalHeader, ModalBody } from "react-bootstrap";
 import NewStudentForm from "./NewStudentForm";
 
 class NewStudentModal extends Component {

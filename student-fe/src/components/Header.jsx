@@ -7,16 +7,16 @@ class Header extends Component {
         <img
           // src="/public/yewt.png"
           alt="Header Image"
-          src="https://gdm-catalog-fmapi-prod.imgix.net/ProductLogo/b0025d6f-fcf1-49fb-b6c4-91f2aa4be5fc.png?w=100&q=50" 
-          width="300"
+          src="https://images.freeimages.com/images/large-previews/fb0/double-header-1388142.jpg?fmt=webp&h=350" 
+          width="400"
           className="img-thumbnail"
           style={{ marginTop: "20px" }}
         />
         <hr />
         <h5>
-          <i>presents</i>
+          <i>Hello from the front-end React site!</i>
         </h5>
-        <h1>Nick's App with React + Django</h1>
+        <h1>Nick's App with React FE + Django BE API</h1>
       </div>
     );
   }
