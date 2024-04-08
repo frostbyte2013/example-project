@@ -1,6 +1,6 @@
 
 # Use official Node.js image as the base image for building
-FROM node:latest AS builder
+FROM node:18-alpine AS builder
 
 # Set the working directory in the container
 WORKDIR /student-fe
@@ -17,15 +17,16 @@ COPY . .
 # Build the React app for production
 RUN npm run build
 
-# Use lightweight Nginx image as the base image for the production environment
+
+#Use lightweight Nginx image as the base image for the production environment
 FROM nginx:alpine
 
 # Copy the build output from the builder stage to the production image
-COPY --from=builder /student-fe/build /usr/share/nginx/html
+COPY --from=builder /student-fe /usr/share/nginx/html
 
 # # Copy nginx configuration file
 # COPY nginx.conf /etc/nginx/nginx.conf
-
+CMD [ "npm", "run", "start" ]
 # Expose port 80 to the outside world (nginx default)
 EXPOSE 80
 
