@@ -40,7 +40,9 @@ jobs:
     - run: |
         pwd &&
         cd ./student-fe &&
+        pwd &&
         npm --version
+        sudo npm config set registry http://registry.npmjs.org
         sudo npm ci &&
         sudo npm run build --if-present &&
         sudo npm test
